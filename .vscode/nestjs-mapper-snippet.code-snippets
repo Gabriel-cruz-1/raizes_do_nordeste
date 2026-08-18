@@ -1,0 +1,23 @@
+{
+  "Create Custom Mapper": {
+    "prefix": "nestjs-mapper",
+    "body": [
+      "import { ${1:CustomName}Document } from '@src/database/schemas';",
+      "import { ${1:CustomName}Response } from '../responses';",
+      "",
+      "export class ${1:CustomName}Mapper {",
+      "  static mapDocument(doc: ${1:CustomName}Document): ${1:CustomName}Response {",
+      "    return {",
+      "      id: doc.id,",
+      "      value: doc.value,",
+      "    };",
+      "  }",
+      "",
+      "  static mapCollection(docs: ${1:CustomNameDocument}Document[]): ${1:CustomName}Response[] {",
+      "    return docs.map(this.mapDocument);",
+      "  }",
+      "}",
+    ],
+    "description": "Create a customizable NestJS mapper",
+  },
+}
